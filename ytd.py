@@ -1,5 +1,5 @@
-from pytube import YouTube
-from pytube import Playlist
+import os
+os.system('pip install pytube')
 
 def Menu():
     print("""                     ,----,             
@@ -30,12 +30,15 @@ def Menu():
         Menu()
 
 def pil1():
+    from pytube import YouTube
     link = input("Masukkan Link = ")
     print("Loading... Tekan CTRL + C untuk berhenti")
     YouTube(link).streams.first().download()
+    os.system('clear')
     Menu()
 
 def pil2():
+    from pytube import Playlist
     linkpl = input("Masukkan link playlist = ")
     playlist = Playlist(linkpl)
     for video in playlist.videos:
